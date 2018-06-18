@@ -1,0 +1,44 @@
+*{
+    font-size: 16px;
+}
+
+div{
+    margin-bottom: 5px;
+}
+.panle_div{
+    border:#ccc solid 1px;
+    padding:8px 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.pt-20 input {
+    width: 82%;
+    display:initial;
+}
+
+.ui-growl-item{
+    margin-top: 3em;
+}
+
+.question-isEffective-label{
+    font-size: 16px;
+}
+
+/*单选题*/
+.chec-options{
+    width: 95%;
+}
+
+.option-sublist{
+    margin-top: 3%;
+}
+
+.option-del-icon{
+    font-size: 20px;
+}
+
+.ant-dropdown-link{
+    font-size: 20px;
+}
+/*单选题*/

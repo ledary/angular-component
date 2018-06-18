@@ -1,0 +1,33 @@
+
+<div class="line-wrapper" *ngFor="let data of datas" #linewrapper>
+  <div class="line-scroll-wrapper" #scorewrapper>
+    <div class="line-normal-wrapper" #nomalwrapper>
+      <div class="line-normal-left-wrapper">
+        <div class="line-normal-info-wrapper">
+          <div class="line-normal-user-name">{{data.name}}</div>
+          <div class="line-normal-msg">{{data.anthor}}</div>
+          <div class="line-normal-time">{{data.times}}</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="line-btn-delete"><button>删除</button></div>
+  </div>
+</div>
+
+<!--<div class="line-wrapper" #linewrapper>
+  <div class="line-scroll-wrapper" #scorewrapper>
+    <div class="line-normal-wrapper" #nomalwrapper>
+      <div class="line-normal-left-wrapper">
+        <div class="line-normal-info-wrapper">
+          <div class="line-normal-user-name">蜡笔小新</div>
+          <div class="line-normal-msg">在同行的小伙伴中提到了你</div>
+          <div class="line-normal-time">1分钟前</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="line-btn-delete"><button>删除</button></div>
+  </div>
+</div>-->
+

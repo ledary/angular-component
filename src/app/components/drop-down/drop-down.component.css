@@ -1,0 +1,232 @@
+.select{
+	border: 1px solid red;
+	padding: 20px;
+	/*width: 300px;*/
+}
+.select input.key{
+    width: 100%;
+	height: 30px;
+	border: 1px solid #ddd;
+	margin: 0;
+	background-position: 95% center;
+}
+.select .content{
+	display: block;
+	width:80%;
+	/*max-height: 200px;*/
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+.select .content p{
+	border-top: 1px solid #ddd;
+	margin: 0px;
+	padding: 5px;
+	background-color: #D2D2D2;
+}
+.select .content .search{
+	background-color: #fff;
+}
+.select .search>input{
+	width: 98%;
+	height: 25px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	background-position: 95% center;
+}
+.select .content .option{
+ overflow-y: auto;max-height: 100px;
+}
+
+
+/*!
+ * Bootstrap-select v1.12.2 (http://silviomoreto.github.io/bootstrap-select)
+ *
+ * Copyright 2013-2017 bootstrap-select
+ * Licensed under MIT (https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE)
+ */
+
+
+.bootstrap-select {
+  width: 220px \0;
+  /*IE9 and below*/
+}
+.bootstrap-select > .dropdown-toggle {
+  width: 100%;
+  padding-right: 25px;
+  z-index: 1;
+}
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+  color: #999;
+}
+.bootstrap-select > select {
+  position: absolute !important;
+  bottom: 0;
+  left: 50%;
+  display: block !important;
+  width: 0.5px !important;
+  height: 100% !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  border: none;
+}
+
+.has-error .bootstrap-select .dropdown-toggle,
+.error .bootstrap-select .dropdown-toggle {
+  border-color: #b94a48;
+}
+.bootstrap-select.fit-width {
+  width: auto !important;
+}
+
+
+.bootstrap-select.form-control {
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+}
+
+.bootstrap-select.form-control.input-group-btn {
+  z-index: auto;
+}
+.bootstrap-select.form-control.input-group-btn:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+
+.form-inline .bootstrap-select.btn-group,
+.form-horizontal .bootstrap-select.btn-group,
+.form-group .bootstrap-select.btn-group {
+  margin-bottom: 0;
+}
+.form-group-lg .bootstrap-select.btn-group.form-control,
+.form-group-sm .bootstrap-select.btn-group.form-control {
+  padding: 0;
+}
+.form-group-lg .bootstrap-select.btn-group.form-control .dropdown-toggle,
+.form-group-sm .bootstrap-select.btn-group.form-control .dropdown-toggle {
+  height: 100%;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: inherit;
+}
+.form-inline .bootstrap-select.btn-group .form-control {
+  width: 100%;
+}
+
+
+.bootstrap-select.btn-group.bs-container .dropdown-menu {
+  z-index: 1060;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+.bootstrap-select.btn-group[class*="col-"] .dropdown-toggle {
+  width: 100%;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+  min-width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.bootstrap-select.btn-group .dropdown-menu.inner {
+  position: static;
+  float: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+          overflow-y:auto;
+          max-height: 150px;
+          max-width: 300px;
+}
+.bootstrap-select.btn-group .dropdown-menu li {
+  position: relative;
+}
+
+
+.bootstrap-select.btn-group .dropdown-menu li a {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+
+
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+  display: inline-block;
+}
+.bootstrap-select.btn-group .dropdown-menu li small {
+  padding-left: 0.5em;
+}
+
+
+
+.bootstrap-select.btn-group.fit-width .dropdown-toggle .caret {
+  position: static;
+  top: auto;
+  margin-top: -1px;
+}
+
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+  margin-right: 34px;
+}
+
+
+
+
+.bs-searchbox,
+.bs-actionsbox,
+.bs-donebutton {
+  padding: 4px 8px;
+}
+.bs-actionsbox {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.bs-actionsbox .btn-group button {
+  width: 50%;
+}
+.bs-donebutton {
+  float: left;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.bs-donebutton .btn-group button {
+  width: 100%;
+}
+.bs-searchbox + .bs-actionsbox {
+  padding: 0 8px 4px;
+}
+.bs-searchbox .form-control {
+  margin-bottom: 0;
+  height: 80%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 100%;
+  float: none;
+}
+
+.span-2x{
+  font-size: 20px;
+}
+
+.font-cousm{
+  font-size: 12px;
+}

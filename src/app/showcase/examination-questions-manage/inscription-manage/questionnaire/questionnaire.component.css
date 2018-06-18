@@ -1,0 +1,22 @@
+
+.questionnaire ul li {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.questionnaire{
+    margin-bottom: 30px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.form-control{
+    padding: 0 0;
+}
+
+.question-order{
+    font-size: 16px;
+}

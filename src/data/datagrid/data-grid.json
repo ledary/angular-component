@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "classCode": 1,
+      "gradeId": "2013级",
+      "className": "13级国际贸易实务1班",
+      "remark": 32,
+      "id": "3942b8b0-ddc9-4dd7-88de-ab99776bc0cc",
+       "address":"邯郸市"
+    },
+    {
+      "classCode": 2,
+      "gradeId": "2013级",
+      "className": "13级社会工作1班",
+      "remark": 32,
+      "id": "3e1a076f-449e-44e5-a99a-3e8a8b2dc0bf",
+       "address":"邯郸市"
+    },
+    {
+      "classCode": 3,
+      "gradeId": "2013级",
+      "className": "13级物流管理专科1班",
+      "remark": 32,
+      "id": "3ee07f33-ea08-473c-8e74-5c8ded1ec951",
+       "address":"邯郸市"
+    },
+    {
+      "classCode": 4,
+      "gradeId": "2013级",
+      "className": "13级信息与计算科学1班",
+      "remark": 32,
+      "id": "3fd2e3f8-4431-4d12-8e9c-4a6cbd9d6979",
+       "address":"邯郸市"
+    },
+    {
+      "classCode": 5,
+      "gradeId": "2013级",
+      "className": "13级财务会计类3班",
+      "remark": 32,
+      "id": "441526ab-fcc7-4a32-8cce-d272107ad04c",
+      "address":"邯郸市"
+    }, {
+      "classCode": 6,
+      "gradeId": "2013级",
+      "className": "13级信息与计算科学1班",
+      "remark": 7,
+      "id": "3fd2e3f8-4431-4d12-8e9c-4a6cbd9d6979",
+       "address":"邯郸市"
+    }, {
+      "classCode": 7,
+      "gradeId": "2013级",
+      "className": "13级信息与计算科学1班",
+      "remark": 9,
+      "id": "3fd2e3f8-4431-4d12-8e9c-4a6cbd9d6979",
+       "address":"邯郸市"
+    }, {
+      "classCode": 8,
+      "gradeId": "2013级",
+      "className": "13级信息与计算科学1班",
+      "remark": 11,
+      "id": "3fd2e3f8-4431-4d12-8e9c-4a6cbd9d6979",
+       "address":"邯郸市"
+    },{
+      "classCode": 9,
+      "gradeId": "2013级",
+      "className": "13级信息与计算科学1班",
+      "remark": 9,
+      "id": "3fd2e3f8-4431-4d12-8e9c-4a6cbd9d6979",
+       "address":"邯郸市"
+    },{
+      "classCode": 10,
+      "gradeId": "2013级",
+      "className": "13级信息与计算科学1班",
+      "remark": 9,
+      "id": "3fd2e3f8-4431-4d12-8e9c-4a6cbd9d6979",
+       "address":"邯郸市"
+    }
+  
+  ],
+  "total": 20
+}

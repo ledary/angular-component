@@ -1,0 +1,17 @@
+
+ 
+ 
+  <div class="container"    >
+<div class="row">
+<data-table (deletesEmit)="deleteDatas($event)"  [ButtonHeaders]="buttonHeaders" (changepage)="changepage($event)" [isCheckBox] = "isCheck" [isLink]="isLink" [buttonList]="btnList" (operat)="operatData($event)"   [title]="title" [page] ="page" [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event)" [importButton]="btnImport" [exportButton] = "btnExport" [total]="total" (coustomData)="coustom($event)"
+ [data]="data" [pagination]="pagination" (checkBoxEmit)="selectbox($event)" [arr]="arrbutes" (exportEmit)="export($event)"  (linkClickEmitData)="linkClick($event)" [buttonstyle]="btnstyle"   [sizeList]="sizeList" [paging]="paging" [pageSize]="pageSize" (importEmit)="import($event)" ></data-table>
+</div>
+  </div>
+
+<input class="btn" type="button" value="按钮">
+
+
+
+
+<!--*****测试博客好友组件****** -->
+<app-list   [config]="config"></app-list>

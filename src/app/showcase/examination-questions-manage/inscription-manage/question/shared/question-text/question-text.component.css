@@ -1,0 +1,101 @@
+*{
+    font-family: 楷体;
+    font-size: 16px;
+}
+div{
+    margin-bottom: 5px;
+}
+
+.anylaize-div{
+    height:180px;
+    width: 100%;
+}
+.margin_top_div{
+    margin-top: 5px;
+}
+.important{
+    color: red;
+}
+.anylaize-img{
+    height: 447px;
+    min-width: 628px;
+    float:left;
+}
+
+.question-score{
+    width: 10%;
+}
+
+.btns{
+    margin-top: 10%;
+}
+
+.blank{
+    margin-left: 3%;
+    margin-top: 2%;
+}
+.panle_div{
+    border:#ccc solid 1px;
+    padding:8px 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.number_input{
+    width:50px;
+    height:25px;
+    padding:3px 3px;
+}
+
+.control-label{
+    font-size: 16px;
+}
+
+
+
+.question-isOrder-label{
+    margin-left: 5%;
+
+}
+
+.question-isAlias-label{
+    margin-left: 5%;
+
+}
+
+.question-span{
+    font-size: 16px;
+}
+
+.text-blank{
+    margin-top: 12%;
+}
+
+.itoo_input{
+    height:30px;
+    padding:3px 6px;
+    font-size:14px;
+    line-height:1.42857143;
+    color:#555;
+    background-color:#fff;
+    background-image:none;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+
+.itoo_input:focus{
+    border-color:#66afe9;
+    outline:0;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+.itoo_input_all{
+    width:100%;
+}
+
+.info_div >div{
+    padding:0;
+}

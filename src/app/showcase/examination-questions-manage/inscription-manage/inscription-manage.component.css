@@ -1,0 +1,67 @@
+.ui-growl-item {
+    margin-top: 3em;
+}
+
+.question-bank{
+    font-size: 15px;
+    font-weight: 700;
+}
+/* -------------------------------------十二期杨晓风---------------搜索框--------------------- */
+#search{
+    padding-bottom: 5%;
+}
+
+label{
+    font-size: 18px;
+}
+
+.app-search{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* 图片详情的列表样式 */
+.image-table{
+    height: 300px;
+    overflow: auto;
+    font-size: 16px;
+}
+
+.btn-image-table{
+    font-size: 16px;
+}
+
+.inscription-course{
+    width: 50%;
+}
+
+.inscription-select{
+    width: 20%;
+    margin-left: 2%;
+}
+
+.image-details{
+    width: 100%;
+}
+
+.prosess{
+    width: 20%;
+    text-align: center;
+}
+
+.status{
+    width: 20%;
+    text-align: center;
+}
+
+.operation{
+    width: 20%;
+    text-align: center;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

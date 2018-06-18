@@ -1,0 +1,31 @@
+{
+    "/authorityManagement-web": {
+      "target": "http://192.168.22.201:8080",
+      "secure":false
+    },
+    "/basicInfo-web": {
+      "target": "http://192.168.22.202:8080",
+      "secure":false
+    },
+    "/itooCloud-web": {
+      "target": "http://192.168.22.202:8080",
+      "secure":false
+    },
+    "/achievement-web": {
+      "target": "http://192.168.22.201:8080",
+      "secure":false
+    },
+    "/examinationEvaluation-web": {
+      "target": "http://192.168.22.201:8082",
+      "secure":false
+    },
+    "/teachingManagement-web": {
+      "target": "http://192.168.22.202:8080",
+      "secure":false
+    },
+    "/singleTableMaintain-web": {
+      "target": "http://192.168.22.202:8080",
+      "secure":false
+    }
+   
+}

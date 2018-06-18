@@ -1,0 +1,18 @@
+
+
+<div class="btn-group bootstrap-select fit-width"  #menu>
+
+    <button type="button" class="btn dropdown-toggle btn-default " style="padding-right:10px;" data-toggle="dropdown"   >
+        <span id={{selectValue?.id}} class="filter-option pull-left font-cousm " >{{selectValue?.value}}</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span>
+    </button>
+    <div class="dropdown-menu open">
+        <div class="bs-searchbox">
+            <input type="text" class="form-control" placeholder="请输入" (input)="onFilter($event)">
+        </div>
+        <ul class="dropdown-menu inner" >
+            <li><a #a  class="active" (click)="activeValue(menu,a,$event)">--请先选择--</a></li>
+            <li *ngIf="optionsToDisplay==null || optionsToDisplay.length==0"><a>没有内容</a></li>
+            <li *ngFor="let item of optionsToDisplay,let i=index"><a #a id={{item[dataId]}} (click)="activeValue(menu,a,$event)">{{item[dataValue]}}</a></li>
+        </ul>
+    </div>
+</div>

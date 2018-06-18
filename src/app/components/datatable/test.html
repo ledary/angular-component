@@ -1,0 +1,168 @@
+<div *ngIf="data.length==0 || total==0" class="right" #div>
+    <table class="table table-bordered table-condensed" >
+        <thead>
+            <tr>
+                <td style="background:#dce9f9" class="custom-th" colspan="100">
+                    <button *ngIf="addButton" type="button" class="btn btn-primary add_btn" (click)="open(div)"> <i  class="glyphicon glyphicon-plus"></i>&nbsp;添加</button>
+                    <button *ngIf="editButton" type="submit" class="btn btn-primary edit_btn" (click)="btnEdit()"><i class="glyphicon glyphicon-edit"></i>&nbsp;编辑</button>
+
+                    <button *ngIf="deleteButton" type="button" class="btn btn-danger delete_btn" (click)="deleteDatas(datatablemodal)"><span class="glyphicon glyphicon-trash"></span>&nbsp;删除</button>
+                    <button *ngIf="importButton" class="btn btn-success import_btn" (click)="importFile(filePath)"><span class="glyphicon glyphicon-import"></span>&nbsp;导入</button>
+                    <button *ngIf="exportButton" class="btn btn-primary export_btn" (click)="exportFile()"><span class="glyphicon glyphicon-export"></span>&nbsp;导出</button>
+                    <button *ngFor="let item of ButtonHeaders" class="btn com_btn" [ngStyle]="item.style" (click)="coustomClick(item.value)">{{item.value}}</button>
+                </td>
+            </tr>
+            <tr>
+                <th *ngIf="isCheckBox" class="custom-th" style="text-align:center"><input style="margin:auto;" type="checkbox" [(ngModel)]="allChecked" (click)="selectedAll(input)" #input/></th>
+                <th class="custom-th" *ngFor="let item of title" style="text-align:center">{{item}}</th>
+                <th *ngIf="isDetail" class="custom-th" style="text-align:center">详情</th>
+                <th *ngIf="buttonList.length>0" class="custom-th" style="text-align:center">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="100" style="text-align:center">
+                   <p _ngcontent-c5="" style="color: black;">没有您要查询的相关信息
+</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="data.length!=0 && total !=0" class="right" #div>
+
+    <table *ngIf="paging" class="table table-bordered table-condensed" >
+        <thead>
+            <tr>
+                <td style="background:#dce9f9" class="custom-th" colspan="100">
+                    <button *ngIf="addButton" type="button" class="btn btn-primary add_btn" (click)="open(div)"> <i  class="glyphicon glyphicon-plus"></i>&nbsp;添加</button>
+                    <button *ngIf="editButton" type="submit" class="btn btn-primary edit_btn" (click)="btnEdit()"><i class="glyphicon glyphicon-edit"></i>&nbsp;编辑</button>
+
+                    <button *ngIf="deleteButton" type="button" class="btn btn-danger delete_btn" (click)="deleteDatas(datatablemodal)"><span class="glyphicon glyphicon-trash"></span>&nbsp;删除</button>
+                    <button *ngIf="importButton" class="btn btn-success import_btn" (click)="importFile(filePath)"><span class="glyphicon glyphicon-import"></span>&nbsp;导入</button>
+                    <button *ngIf="exportButton" class="btn btn-primary export_btn" (click)="exportFile()"><span class="glyphicon glyphicon-export"></span>&nbsp;导出</button>
+                    <button *ngFor="let item of ButtonHeaders" class="btn com_btn" [ngStyle]="item.style" (click)="coustomClick(item.value)">{{item.value}}</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th *ngIf="isCheckBox" class="custom-th" style="text-align:center"><input style="margin:auto;" type="checkbox" [(ngModel)]="allChecked" (click)="selectedAll(input)" #input/></th>
+                <th class="custom-th" *ngFor="let item of title" style="text-align:center">{{item}}</th>
+                <th *ngIf="isDetail" class="custom-th" style="text-align:center">详情</th>
+                <th *ngIf="buttonList.length>0" class="custom-th" style="text-align:center">操作</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of data;let i = index">
+            <tr>
+                <td *ngIf="isCheckBox" style="text-align:center" class="custom-td"><input type="checkbox" [(ngModel)]="checked[i]" #chbox (click)="select(i,chbox)" /></td>
+                <td style="text-align:center" class="custom-td" *ngFor="let it of arr ;let j = index">
+                    <span *ngIf="!isLink[j]">{{item[it]}}</span>
+                    <a style="cursor:pointer" *ngIf="isLink[j]" (click)="linkClick(i)">{{item[it]}}</a>
+                </td>
+                <td *ngIf="isDetail" style="text-align:center" class="custom-td"><span style="cursor:pointer;border-bottom:1px solid #00F; " (click)="editClick(i,j,div)">详情</span></td>
+
+
+                <td style="text-align:center" class="custom-td" *ngIf="buttonList.length>0">
+
+                    <a style="margin-right: 5px;cursor:pointer" *ngFor="let btn of buttonList;let btnj = index" [ngStyle]="buttonstyle[btnj]"
+                        (click)="operatData(btne,i)" #btne>{{btn}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="!paging" class="table table-bordered table-condensed" >
+        <thead>
+            <tr>
+                <td style="background:#dce9f9" class="custom-th" colspan="100">
+                    <button *ngIf="addButton" type="button" class="btn btn-primary add_btn" (click)="open(div)"> <i  class="glyphicon glyphicon-plus"></i>&nbsp;添加</button>
+                    <button *ngIf="editButton" type="submit" class="btn btn-primary edit_btn" (click)="btnEdit()"><i class="glyphicon glyphicon-edit"></i>&nbsp;编辑</button>
+
+                    <button *ngIf="deleteButton" type="button" class="btn btn-danger delete_btn" (click)="deleteDatas(datatablemodal)"><span class="glyphicon glyphicon-trash"></span>&nbsp;删除</button>
+                    <button *ngIf="importButton" class="btn btn-success import_btn" (click)="importFile(filePath)"><span class="glyphicon glyphicon-import"></span>&nbsp;导入</button>
+                    <button *ngIf="exportButton" class="btn btn-primary export_btn" (click)="exportFile()"><span class="glyphicon glyphicon-export"></span>&nbsp;导出</button>
+                    <button *ngFor="let item of ButtonHeaders" class="btn com_btn" [ngStyle]="item.style" (click)="coustomClick(item.value)">{{item.value}}</button>
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <th *ngIf="isCheckBox" class="custom-th" style="text-align:center"><input style="margin:auto;" type="checkbox" [(ngModel)]="allChecked" (click)="selectedAll(input)" #input/></th>
+                <th class="custom-th" *ngFor="let item of title" style="text-align:center">{{item}}</th>
+                <th *ngIf="isDetail" class="custom-th" style="text-align:center">详情</th>
+                <th *ngIf="buttonList.length>0" class="custom-th" style="text-align:center">操作</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of data;let i = index">
+            <tr *ngIf="i>=(page-1)*pageSize && i<page*pageSize ">
+                <td *ngIf="isCheckBox" style="text-align:center" class="custom-td"><input type="checkbox" #chbox [(ngModel)]="checked[i]" (click)="select(i,chbox)" /></td>
+                <td style="text-align:center" class="custom-td" *ngFor="let it of arr ;let j = index">
+                    <span *ngIf="!isLink[j]">{{item[it]}}</span>
+                    <a style="cursor:pointer" *ngIf="isLink[j]" (click)="linkClick(i)">{{item[it]}}</a>
+                </td>
+                <td *ngIf="isDetail" style="text-align:center" class="custom-td"><span style="cursor:pointer;border-bottom:1px solid #00F; " (click)="editClick(i,j,div)">详情</span></td>
+                <td style="text-align:center" class="custom-td" *ngIf="buttonList.length>0">
+
+                    <a style="margin-right: 5px;cursor:pointer" *ngFor="let btnname of buttonList;let btnj = index" [ngStyle]="buttonstyle[btnj]"
+                        (click)="operatData(btne,i)" #btne>{{btnname}}</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="pagination" class="pagination">
+        <ul style="background-color:#fff;border:0px;">
+            <li style="padding:0px;border-width:0px;">
+                <a style="padding:0px;border-width:0px;cursor:pointer">
+			<select [ngModel]="pageSize" style="margin:0px;color:#0088CC;width:60px;height:30px;border-top-right-radius:0px;border-bottom-right-radius:0px;"    (ngModelChange)=" pageSize=$event;changePageSize()" >
+                <option *ngFor="let item of sizeList" >{{item}}</option>  
+            </select>
+		</a>
+            </li>
+            <li><a style="cursor:pointer" (click)="topPage()">首页</a></li>
+            <li *ngIf="page >1"><a style="cursor:pointer" (click)="previousPage()">上一页</a></li>
+            <li style="padding:0px;border-width:0px;">
+                <a style="padding:0px;border-width:0px;cursor:pointer">
+			<input #in class="custom-input"  (keyup.enter)="changePage(in.value)"   (blur)="changePage(in.value)" value={{page}} />
+		</a>
+            </li>
+            <li *ngIf="page<totalPages"><a style="cursor:pointer" (click)="nextPage()">下一页</a></li>
+            <li><a style="cursor:pointer" (click)="endPage()">尾页</a></li>
+        </ul>
+    </div>
+    <div *ngIf="pagination">
+    <p style="float:right" *ngIf=" page>0"><i>{{(page-1)*pageSize+1  }} </i>~<i> {{page*pageSize < total ? page*pageSize :total }} </i>条,总共<i>{{total}}条</i></p>
+    </div>
+</div>
+
+
+
+
+<div id="screen"></div>
+<div >
+
+</div>
+
+<div style="width:50%;margin:0px" id="file">
+
+    <div class="progress" style="width:100%;margin:0px">
+        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%','margin':'0px' }"></div>
+    </div>
+
+</div>
+<div style="text-align:center;display:none">
+    <input #filePath name="filePath" value="导入" style="margin-left:100px;" type="file" ng2FileSelect [uploader]="uploader" (change)="fileChange()"
+    />
+</div>
+
+<div #screen class="itoo-modal">
+</div>
+<div #screenmodal class="succ-pop">
+   <div class="modal_top" >&nbsp;&nbsp;提示<a class="modal_close"  (click)="closeModal()" ><span >&times;</span></a></div>
+    <div class="modal_content">{{message}}</div>
+    <div class="footer_button">
+        <button (click)="closeModal()">确定</button>
+    </div>
+
+</div>

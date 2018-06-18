@@ -1,0 +1,10 @@
+.select_div{
+    float:left;
+    width:30%;
+}
+.select_div>select{
+    padding:5px;
+}
+.select_div > option{
+    padding: 5px;
+}

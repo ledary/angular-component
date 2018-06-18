@@ -1,0 +1,74 @@
+
+<div class="right" #div >
+       <div style="margin-bottom:10px">
+            <button  *ngIf="addButton" type="submit" class="btn btn-primary" (click)="open(div)" >添加</button>
+            <button *ngIf="editButton" type="submit" class="btn btn-primary" (click)="btnEdit(table,div)">编辑</button>
+            <button *ngIf="deleteButton" type="submit" class="btn btn-primary" (click)="deleteDatas(table)" >删除</button>
+            <button *ngIf="importButton" class="btn btn-primary" (click)="importFile(filePath)" >导入</button>
+            <button *ngIf="exportButton" class="btn btn-primary"  (click)="exportFile()" >导出</button>
+        </div>
+    <table  class="table table-bordered table-condensed" #table >
+        <thead >
+            <tr>
+                <th *ngIf="isCheckBox" style="border:0px;text-align:center" class="custom-th"><input style="margin:auto;" type="checkbox" (click)="selectedAll(input)" #input/></th>
+                <th style="border:0px;text-align:center" *ngFor="let item of title" >{{item}}</th>
+                 <th *ngIf="isDetail" style="border:0px;text-align:center" >详情</th>  
+                  <th *ngIf="buttonList.length>0" style="border:0px;text-align:center" >操作</th>   
+            </tr>
+        </thead>
+   <tbody *ngFor="let item of data;let i = index"> 
+        <tr  *ngIf="i>=(page-1)*pageSize && i<page*pageSize " >
+          <td *ngIf="isCheckBox" style="text-align:center"  class="custom-td" ><input   type="checkbox" /></td>
+            <td style="text-align:center"  class="custom-td"  *ngFor="let it of arr ;let j = index" >
+           <span *ngIf="!isLink[j]">{{item[it]}}</span>
+            <a *ngIf="isLink[j]" (click)="linkClick(i)">{{item[it]}}</a>
+             
+            </td>
+            <td *ngIf="isDetail" style="text-align:center"  class="custom-td" ><span style="cursor:pointer;border-bottom:1px solid #00F; " (click) = "editClick(i,j,div)">详情</span></td>  
+            <td style="text-align:center" *ngIf="buttonList.length>0">
+                <a style="margin-right: 5px;cursor:pointer" *ngFor="let btn of buttonList;let btnj = index" [ngStyle]="buttonstyle[btnj]" (click)="operatData(btne,i)" #btne>{{btn}}</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="pagination">
+<ul style="background-color:#fff;border:0px;" >
+   <li style="padding:0px;border-width:0px;">
+		<a  style="padding:0px;border-width:0px;cursor:pointer">
+			<select [ngModel]="pageSize" style="margin:0px;color:#0088CC;width:50px;height:30px;border-top-right-radius:0px;border-bottom-right-radius:0px;"    (ngModelChange)=" pageSize=$event;changePageSize()" >
+                <option *ngFor="let item of sizeList" >{{item}}</option>  
+            </select>
+		</a>
+    </li>
+	<li><a style="cursor:pointer"  (click)="topPage()">首页</a></li>
+    <li *ngIf="page >1"><a style="cursor:pointer" (click)="previousPage()">上一页</a></li>
+	<li style="padding:0px;border-width:0px;">
+		<a  style="padding:0px;border-width:0px;cursor:pointer">
+			<input #in class="custom-input"  (keyup.enter)="changePage(in.value)"   (blur)="changePage(in.value)" value={{page}} />
+		</a>
+    </li>
+	<li *ngIf="page<totalPages"><a style="cursor:pointer"  (click)="nextPage()">下一页</a></li>
+    <li ><a style="cursor:pointer"  (click)="endPage()" >尾页</a></li>
+</ul>
+ </div>
+ <p style="float:right" *ngIf=" page>0" ><i>{{(page-1)*pageSize+1 | exponentialStrength:total   }} </i>~<i> {{page*pageSize < total ? page*pageSize :total }} </i>条,总共<i>{{total}}条</i></p>
+</div>
+
+
+			
+	
+<div id="screen" ></div>
+<div id="modal" >
+    
+</div>
+
+<div style="width:50%;margin:0px"  id="file">
+   
+        <div  class="progress"  style="width:100%;margin:0px">
+            <div  class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%','margin':'0px' }"></div>
+        </div>
+    
+</div>
+ <div style="text-align:center;display:none">
+     <input #filePath name="filePath" value="导入" style="margin-left:100px;" type="file" ng2FileSelect [uploader]="uploader" (change)="fileChange()" />
+</div>

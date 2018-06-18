@@ -1,0 +1,40 @@
+* { margin: 0; padding: 0; }
+.line-wrapper { width: 100%; height: 144px; overflow: hidden; font-size: 28px; border-bottom: 1px solid #aaa; }
+.line-scroll-wrapper { white-space: nowrap; height: 144px; clear: both; }
+.line-btn-delete { float: left; width: 132px; height: 144px;     display: inline-block; }
+
+.line-btn-delete button { width: 100%; height: 100%; background: red; border: none; font-size: 24px; font-family: 'Microsoft Yahei'; color: #fff; }
+
+.line-normal-wrapper { display: inline-block; line-height: 100px; float: left; padding-top: 10px;width:100%; padding-bottom: 10px; }
+
+.line-normal-icon-wrapper { float: right; width: 120px; height: 120px; margin-right: 12px; }
+.line-normal-icon-wrapper img { width: 120px; height: 120px; }
+
+.line-normal-left-wrapper { float: left; overflow: hidden;     display: inline-block; }
+.line-normal-info-wrapper { float: left; margin-left: 10px; }
+.line-normal-user-name { height: 28px; line-height: 28px; color: #4e4e4e; margin-top: 7px; }
+.line-normal-msg { height: 28px; line-height: 28px; overflow:hidden; text-overflow:ellipsis; color: #4e4e4e; margin-top: 11px; }
+.line-normal-time { height: 28px; line-height: 28px; color: #999; margin-top: 11px; }
+
+/*.con{
+    width: 100%;
+    height: 150px;
+    white-space:nowrap;
+    overflow: hidden;
+ }
+.box{
+    text-align: center;
+            width: 300px;
+            height: 300px;
+            background-color: #20B2AA;
+            display:inline-block;
+            float:left;
+    text-overflow:ellipsis;          
+}
+.box_delete{
+    height: 150px;
+    background-color: #20B2AA;
+    display: inline;
+    padding: 0;
+    margin:0px;
+}*/
