@@ -9,7 +9,6 @@ import {Http, HttpModule,XHRBackend, RequestOptions} from '@angular/http';
 import {  DataTableModule} from 'ng-itoo-datatable';
 // import { DataTableModule } from '.././components/datatable/datatable.module';
 // import { CommonsModule } from '.././components/boke-test/module/common.module';
-import { CommonsModule } from 'newone-test';
 import { LoginModule  } from '.././components/login/login.module';
 import { TestComponent} from './test.component';
 import {testRoutes } from './test.routes';
@@ -57,7 +56,6 @@ import {DragDirective  } from './drag-directive/drag.directive';
 
   imports: [
     CommonModule,
-    CommonsModule,
     FormsModule,
     HttpModule,
     DataTableModule,
