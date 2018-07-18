@@ -1,82 +1,121 @@
 <div class="layout-wrapper">
-        <div id="layout-topbar">
-            <a href="#" class="menu-button" (click)="onMenuButtonClick($event)">
+    <div id="layout-topbar">
+        <a href="#" class="menu-button" (click)="onMenuButtonClick($event)">
             <i class="fa fa-bars"></i>
         </a>
 
-            <a href="#" class="logo" [routerLink]="['/']">
+        <a href="#" class="logo" [routerLink]="['/']">
             大米时代信息
-            </a>
+        </a>
 
-            <ul class="topbar-menu">
-                <li>
-                    <a href="https://angular.io/docs">angular2</a>
-                </li>
+        <ul class="topbar-menu">
+            <li>
+                <a href="https://angular.io/docs">angular2</a>
+            </li>
 
-                <li>
-                    <a href="https://git.oschina.net/mumu-osc/NiceFish/">help</a>
-                </li>
-            </ul>
-        </div>
+            <li>
+                <a href="https://git.oschina.net/mumu-osc/NiceFish/">help</a>
+            </li>
+        </ul>
+    </div>
 
-        <div id="layout-sidebar" [ngClass]="{'active': menuActive}"  >
-            <div class="layout-menu" (mouseleave)="hiddenSidebar($event)">
-                <a id="menu_input" #menu1 [class.active-menuitem]="menu1.id == activeMenuId" (click)="activeMenuId = (activeMenuId === menu1.id ? null : menu1.id)">
-            
+    <div id="layout-sidebar" [ngClass]="{'active': menuActive}">
+        <div class="layout-menu" (mouseleave)="hiddenSidebar($event)">
+            <a id="menu_input" #menu1 [class.active-menuitem]="menu1.id == activeMenuId" (click)="activeMenuId = (activeMenuId === menu1.id ? null : menu1.id)">
+
                 <span>测试管理</span>
             </a>
-                <div [ngClass]="{submenushow: (menu1.id == activeMenuId), 'submenuhide': (menu1.id != activeMenuId)}">
-                    <ul>
-                        <li><a  (click)="jroute()">测试表格</a></li>
-                        <li><a href="#" [routerLink]="['showcase/backtest']">后台服务测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/proxy']">代理服务测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/intercept']">拦截器测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/swiper']">滑动删除测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/login']">导出Excel和可搜索下拉框测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/questiontable']">抽题组件测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/curriculum/viewsuggestion']">建议题组件测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/curriculum/viewsingleoption']">单选题组件测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/curriculum/viewmultipleoption']">多选题组件测试</a></li>
-                        <li><a href="#" [routerLink]="['showcase/exammanager/papers-manage']">试卷管理</a></li>
-                        <li><a href="#" [routerLink]="['showcase/exammanager/inscription-manage']">题库管理</a></li>
-                        <li><a href="#" [routerLink]="['showcase/exammanager/papers-manage/preview']">预览试卷</a></li>
-                        <li><a href="#" [routerLink]="['showcase/drag']">模态框</a></li>
+            <div [ngClass]="{submenushow: (menu1.id == activeMenuId), 'submenuhide': (menu1.id != activeMenuId)}">
+                <ul>
+                    <li>
+                        <a (click)="jroute()">测试表格</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/backtest']">后台服务测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/proxy']">代理服务测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/intercept']">拦截器测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/swiper']">滑动删除测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/login']">导出Excel和可搜索下拉框测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/questiontable']">抽题组件测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/curriculum/viewsuggestion']">建议题组件测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/curriculum/viewsingleoption']">单选题组件测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/curriculum/viewmultipleoption']">多选题组件测试</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/exammanager/papers-manage']">试卷管理</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/exammanager/inscription-manage']">题库管理</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/exammanager/papers-manage/preview']">预览试卷</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/drag']">模态框</a>
+                    </li>
 
-                        
-                        <li><a href="javascript:void(0)"  >后台服务测试</a></li>
-                    </ul>
-                </div>
-                  <a id="menu2" #menu2 [class.active-menuitem]="menu2.id == activeMenuId" (click)="activeMenuId = (activeMenuId === menu2.id ? null : menu2.id)">
-            
+
+                    <li>
+                        <a href="javascript:void(0)">后台服务测试</a>
+                    </li>
+                </ul>
+            </div>
+            <a id="menu2" #menu2 [class.active-menuitem]="menu2.id == activeMenuId" (click)="activeMenuId = (activeMenuId === menu2.id ? null : menu2.id)">
+
                 <span>测试管理</span>
             </a>
-                <div [ngClass]="{submenushow: (menu2.id == activeMenuId), 'submenuhide': (menu2.id != activeMenuId)}">
-                    <ul>
-                        <li><a href="#" [routerLink]="['showcase/datatable']">测试表格</a></li>
-                        <li><a href="#" [routerLink]="['showcase/backtest']">后台服务测试</a></li>
-                        <li><a href="javascript:void(0)"  >后台服务测试</a></li>
-                    </ul>
-                </div>
-
+            <div [ngClass]="{submenushow: (menu2.id == activeMenuId), 'submenuhide': (menu2.id != activeMenuId)}">
+                <ul>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/datatable']">测试表格</a>
+                    </li>
+                    <li>
+                        <a href="#" [routerLink]="['showcase/backtest']">后台服务测试</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">后台服务测试</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div id="layout-content">
-            <div>
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-          
 
-      
-</div>
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-                 <div class="content-section layout-footer clearfix">
-               
-            <div class="footer-links">
-                      <span class="footer-span" >@分享是一种理念</span><a href="https://github.com/ledary/back-manage"><i class="fa fa-github"></i></a>
-            <div>
+        </div>
+    </div>
+    <div id="layout-content">
+        <div>
+            <router-outlet></router-outlet>
         </div>
     </div>
 
+
+
 </div>
-            </nav>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="content-section layout-footer clearfix">
+
+        <div class="footer-links">
+            <span class="footer-span">@分享是一种理念</span>
+            <a href="https://github.com/ledary/back-manage">
+                <i class="fa fa-github"></i>
+            </a>
+            <div>
+            </div>
+        </div>
+
+    </div>
+</nav>

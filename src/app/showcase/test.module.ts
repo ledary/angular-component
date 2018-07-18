@@ -12,12 +12,12 @@ import {  DataTableModule} from 'ng-itoo-datatable';
 import { LoginModule  } from '.././components/login/login.module';
 import { TestComponent} from './test.component';
 import {testRoutes } from './test.routes';
-import {BaseService } from './util/baseservice';
 import {DataTableDemo  } from './datatabledemo/datatabledemo.component';
 import { BackTestComponent }  from './backtest/backtest.component';
 import { ProxyComponent  } from './proxyTest/proxy.component'
 import {  InterceptComponent} from './intercept-component/intercept.component';
 import { HttpInterceptorService }   from './util/interceptservice';
+import {BaseService } from './util/baseservice';
 
 import {SwiperComponent  } from './swiper-component/swiper.component';
 import {LoginTest  } from './logintest/logintest.component';
@@ -31,10 +31,10 @@ import {DragDirective  } from './drag-directive/drag.directive';
 
 
 
- export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions){
-   let service = new HttpInterceptorService(xhrBackend, requestOptions);
-   return service;
- }
+//  export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions){
+//    let service = new HttpInterceptorService(xhrBackend, requestOptions);
+//    return service;
+//  }
 
 
 @NgModule({
@@ -63,12 +63,8 @@ import {DragDirective  } from './drag-directive/drag.directive';
 
 
   ],
-providers:[BaseService,  HttpInterceptorService,
- {
-      provide: HttpInterceptorService,
-      useFactory: interceptorFactory, 
-      deps: [XHRBackend, RequestOptions]
-    }
+providers:[
+
 
 ],
 exports:[DataTableDemo]
