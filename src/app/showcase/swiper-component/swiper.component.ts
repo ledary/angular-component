@@ -44,12 +44,12 @@ export class SwiperComponent implements OnInit,AfterViewInit {
     ngOnInit() {
         console.log(this.lineWrapperList);
        this.datas=[
-    {name:"数据结构名称",anthor:"郭晶晶",times:"1分钟前"},
-    {name:"数据结构名称",anthor:"郭晶晶",times:"1分钟前"},
-    {name:"数据结构名称",anthor:"郭晶晶",times:"1分钟前"},
-    {name:"数据结构名称",anthor:"郭晶晶",times:"1分钟前"},
-    {name:"数据结构名称",anthor:"郭晶晶",times:"1分钟前"},
-    {name:"数据结构名称",anthor:"郭晶晶",times:"1分钟前"}
+    {name:"数据结构名称",anthor:"曾经",times:"1分钟前"},
+    {name:"数据结构名称",anthor:"曾经",times:"1分钟前"},
+    {name:"数据结构名称",anthor:"曾经",times:"1分钟前"},
+    {name:"数据结构名称",anthor:"曾经",times:"1分钟前"},
+    {name:"数据结构名称",anthor:"曾经",times:"1分钟前"},
+    {name:"数据结构名称",anthor:"曾经",times:"1分钟前"}
 
     ]
         // this.swiperInit();

@@ -1,10 +1,23 @@
 
 <div >  
-
-    <button type="button" (click)="exportExcel()">导出Excel</button>  
+<!-- 使用#table传递到方法的参数  table,再传给ts -->
+    <label for=""></label>
+    <button  type="button" (click)="exportHtmlElement(table)">打印#变量</button> 
+    <!-- 测试$event  -->
+    <button type="button" (click)="exportEvent($event)">打印$Event</button>  
+    <!-- 测试this -->
+    <button type="button" (click)="exportThis(this)">打印this</button>  
+    <!-- 测试js内置的event对象 -->
+    <button type="button" (click)="export()">打印内置的event</button>  
+    <button type="button" (click)="exportViewChild()">打印@ViewChild</button>  
+    <button type="button" (click)="exportViewChildren()">打印@ViewChild</button>  
 </div> 
+<!-- @ViewChildren打印例子 -->
+<div *ngFor="let div of numDiv,let i of index" #div>{{i}}</div>
 
-<!-- #table对应ts里的@ViewChile括号里的字符串 -->
+<button  type="button" (click)="exportExcel()">导出Excel</button> 
+
+<!-- 采用#变量的方式，传递给后台的@ViewChild -->
 <table #table id="tableExcel" width="100%" border="1" cellspacing="0" cellpadding="0">  
     <tr>  
         <td colspan="5" align="center">html 表格导出道Excel</td>  
@@ -29,14 +42,7 @@
         <td>CCC</td>  
         <td>DDD</td>  
         <td>EEE</td>  
-    </tr>  
-    <tr>  
-        <td>FFF</td>  
-        <td>GGG</td>  
-        <td>HHH</td>  
-        <td>III</td>  
-        <td>JJJ</td>  
-    </tr>  
+    </tr>    
 </table> 
 
 <label>下拉框：</label><p-dropdown [selectValue]="selectValues[0]" [data]="data" [dataId]="id" [dataValue]="value"></p-dropdown>
