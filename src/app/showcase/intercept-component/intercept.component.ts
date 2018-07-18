@@ -13,13 +13,12 @@ const EXPORT_URL = "examinationEvaluation-web/papersManager/findExamPaperById/4m
 @Component({
   selector: 'intercept-test',
   templateUrl: './intercept.component.html',
-  styleUrls: ['./intercept.css'],
-  providers:[AuthService]
+  styleUrls: ['./intercept.css']
 })
 
 
 export class InterceptComponent implements OnInit {
-  constructor(private auth:AuthService, private ds: HttpClientService,private interService:HttpInterceptorService) {
+  constructor( private ds: HttpClientService,private interService:HttpInterceptorService) {
 
   }
 
@@ -70,11 +69,11 @@ getData2(){
 
   /************************************************************* */
 
-  /***************************大神级拦截器********************************* */
+  /***************************大神级拦截器——暂未实现********************************* */
   getData3(){
 
-    let url = "bookType/getAllType/1/1";
-   this.auth.get(url).then(response =>{ console.log( response.json())})
+  //   let url = "bookType/getAllType/1/1";
+  //  this.auth.get(url).then(response =>{ console.log( response.json())})
 
   }
 

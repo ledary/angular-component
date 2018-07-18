@@ -1,5 +1,6 @@
 /**
  * Created by WGP on 2017/4/25.
+ * HttpClient 是自带拦截器的，可以配置自己的拦截器 ，详细请见  ./authinterceptor.ts
  */
 import {Component, OnInit,Injectable} from '@angular/core';
 import {Observable} from "rxjs/Observable";

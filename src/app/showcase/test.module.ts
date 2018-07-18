@@ -17,10 +17,8 @@ import {DataTableDemo  } from './datatabledemo/datatabledemo.component';
 import { BackTestComponent }  from './backtest/backtest.component';
 import { ProxyComponent  } from './proxyTest/proxy.component'
 import {  InterceptComponent} from './intercept-component/intercept.component';
-import { ServerUrlInterceptor  } from './util/abandon/http.interceptor';
-import { provideInterceptorService } from '.././components/ngintercept/interceptor-provider';
 import { HttpInterceptorService }   from './util/interceptservice';
-import { InterceptorService } from '.././components/ngintercept/interceptor-service';
+
 import {SwiperComponent  } from './swiper-component/swiper.component';
 import {LoginTest  } from './logintest/logintest.component';
 import { DropDownComponent } from '.././components/drop-down/drop-down.component';

@@ -5,11 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 
-// import { provideInterceptorService  } from 'ng2-interceptors';
-// // import { provideInterceptorService } from './components/ngintercept/interceptor-provider';
-// import { ServerUrlInterceptor   } from './showcase/util/http.interceptor';
-// import { AuthService  } from './showcase/util/authservice'
-import {Http, HttpModule,XHRBackend, RequestOptions,ConnectionBackend} from '@angular/http';
+
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {appRoutes } from './app.routes';

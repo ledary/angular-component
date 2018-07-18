@@ -219,7 +219,7 @@ timestamp = timestamp / 1000
       alert(  timestamp);
       let file = new File([res],timestamp.toString() + ".xls",{type: "application/vnd.ms-excel"})
 
-      var objectUrl = URL.createObjectURL(file,false);
+      var objectUrl = URL.createObjectURL(file);
       window.open(objectUrl);
     URL.revokeObjectURL(objectUrl);
     })
