@@ -43,6 +43,16 @@ export class LoginTest implements OnInit, AfterViewInit {
   }
   //打印ViewChildren 的QueryList<ElementRef>
   exportViewChildren() {
+    console.log(this.divs);
+    console.log("*****************")
+    for(let i=0;i<this.divs.toArray().length;i++){
+      console.log(this.divs.toArray())
+    }
+    console.log("*****************")
+    for(let i=0;i<this.divs.toArray().length;i++){
+      console.log(this.divs.toArray()[i])
+    }
+    console.log("*****************")
     for(let i=0;i<this.divs.toArray().length;i++){
       console.log(this.divs.toArray()[i].nativeElement)
     }
