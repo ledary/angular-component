@@ -26,7 +26,8 @@ export const testRoutes = [
     { path: 'drag', component:DragComponent },
     { path: 'questiontable', component:QuestionTableComponent },
     {path:'curriculum',loadChildren:"./curriculum/curriculum.module#CurriculumModule"},
-    {path:'exammanager',loadChildren:"./examination-questions-manage/examination-questions-manage.module#ExaminationQuestionsManageModule"}
+    {path:'exammanager',
+    loadChildren:"./examination-questions-manage/examination-questions-manage.module#ExaminationQuestionsManageModule"}
 
 
 ];

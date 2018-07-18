@@ -4,7 +4,7 @@
  */
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter, DoCheck, OnChanges } from '@angular/core';
 
-
+import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'question-table',
@@ -38,8 +38,12 @@ condition:string="";
   totalPages: number = Math.ceil(this.total / this.pageSize);
 
   //依赖注入，提供http服务
-  constructor(
-  ) { }
+  constructor(private rote:ActivatedRoute,private router:Router
+  ) { 
+    console.log(rote);
+    console.log(router);
+
+  }
 
   ngOnInit() {
     this.data = [
