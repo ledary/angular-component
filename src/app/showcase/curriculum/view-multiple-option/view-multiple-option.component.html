@@ -1,122 +1,68 @@
-<div>
-  <div class="form-group">
-    <label class="col-sm-3 control-label">课程名称：</label>
-    <div class="col-sm-9">
-      <label class="form-control">
-        {{ExaminationModel.courseName}}
-      </label>
+<div class="top">
+    <view-select-top> </view-select-top>
     </div>
-  </div>
-
-  <div class="form-group">
-    <label class="col-sm-3 control-label">学年学期：</label>
-    <div class="col-sm-9">
-      <select class="form-control" name="term" id="termId" (change)="termChange($event.target.value)" required>
-        <option>{{termNameForFirstShow}}</option>
-        <option *ngFor="let option of TermModelList" [value]="option.code">{{option.name}}</option>
-      </select>
+    
+    <div class="form-group col-sm-8">
+        <div class="input-group">
+            <input type="text" class="form-control"   placeholder="请输入题干名称" [(ngModel)] = "condition">
+            <div class="input-group-addon search_div" >搜索</div>
+            <div class="input-group-addon export_div" >导出</div>
+        </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-3 control-label">专业：</label>
-    <div class="col-sm-9">
-      <select class="form-control" name="term" id="termId" (change)="termChange($event.target.value)" required>
-        <option>{{termNameForFirstShow}}</option>
-        <option *ngFor="let option of TermModelList" [value]="option.code">{{option.name}}</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-<div class="search">
-    <!--<app-search [information]="information" [url]="url" (editData)="query($event)"></app-search>-->
-    <button type="button" class="btn btn-default" style="background-color: #37C6C0" (click)="exportMultipleOption(info.value);">导出</button>
-</div>
-
-<!-- 有数据时的表格主体，没有数据时第二个表格 -->
-<div class="col-sm-12" style="margin-left:-1.5%;">
-
-  <table class="table table-condensed" style="color:white;border-spacing:10px" #table>
-    <tbody>
-      <!-- *ngFor="let q of questionaires;let i=index" -->
-      <!-- 表格标题 2017年10月29日19:58:43 -->
-      <tr *ngIf="i>=(page-1)*pageSize && i<page*pageSize " style="height:30px;background:#37C6C0;font-size:18px;">
-        <td hidden item-width="auto">{{q.id}}</td>
-        <td>{{q.name}}</td>
-        <td>{{state[q.status]}}</td>
-        <td>{{q.createTime|date: 'yyyy-MM-dd' }}</td>
-        <td></td>
-      </tr>
-
-      <!-- 表格主体 2017年10月29日19:58:43  -->
-      <tr *ngIf="i>=(page-1)*pageSize && i<page*pageSize " class="oper" style="height:60px;font-size:15px;">
-        <td>
-          <a style="margin-right: 10px;cursor:pointer;text-align:center" class="glyphicon glyphicon-pencil" (click)="edit(q)">编辑问卷</a>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a style="margin-right: 5px;cursor:pointer" class="glyphicon glyphicon-signal" (click)="analysis(q)">统计分析</a>
-        </td>
-        <td style="margin-right: 5px;cursor:pointer" [ngSwitch]="q.status">
-          <a class="glyphicon glyphicon-play" (click)="oper(q,aOper)" *ngSwitchCase="0" #aOper>发布</a>
-          <a class="glyphicon glyphicon-play" (click)="oper(q,bOper)" *ngSwitchCase="1" #bOper>停止</a>
-          <a class="glyphicon glyphicon-pause" (click)="oper(q,cOper)" *ngSwitchCase="2" #cOper>运行</a>
-        </td>
-        <!-- <td>
-                  <a style="margin-right: 5px;cursor:pointer" class="glyphicon glyphicon-file" (click)="copy(q,modal,pname)">复制</a>
-              </td> -->
-        <td class="remove">
-          <a style="margin-right: 5px;cursor:pointer" class="glyphicon glyphicon-remove" (click)="delete(q)">删除</a>
-        </td>
-      </tr>
-    </tbody>
-
-    <!-- 没有数据 时-->
-    <tbody *ngIf="questionaires==null">
-      <tr>
-        <td colspan="100" style="text-align:center">
-          <h1 style="color:#37C6C0">没有数据</h1>
-        </td>
-      </tr>
-    </tbody>
-    <!-- 没有数据  end -->
-
-  </table>
-
-  <!-- 分页功能 2017年10月29日20:09:00 begin  -->
-  <div *ngIf="questionaires!=null" class="pagination">
-    <ul style="background-color:#fff;border:0px;">
-      <li style="padding:0px;border-width:0px;">
-        <a style="padding:0px;border-width:0px;cursor:pointer">
-          <!-- 每页分多少页 2017年10月29日20:16:39  -->
-          <select [ngModel]="pageSize" class="page-size-style" (ngModelChange)="pageSize=$event;changePageSize()">
-            <option *ngFor="let item of sizeList">{{item}}</option>
-          </select>
-        </a>
-      </li>
-      <li>
-        <a style="cursor:pointer" (click)="topPage()">首页</a>
-      </li>
-      <li *ngIf="page >1">
-        <a style="cursor:pointer" (click)="previousPage()">上一页</a>
-      </li>
-      <li style="padding:0px;border-width:0px;">
-        <a class="cutstom-input-style">
-          <input #in class="custom-input" (keyup.enter)="changePage(in.value)" (blur)="changePage(in.value)" value={{page}} />
-        </a>
-      </li>
-      <li *ngIf="page<totalPages">
-        <a style="cursor:pointer" (click)="nextPage()">下一页</a>
-      </li>
-      <li>
-        <a style="cursor:pointer" (click)="endPage()">尾页</a>
-      </li>
-    </ul>
-    <p style="float:right" *ngIf=" page>0">
-      <i>{{(page-1)*pageSize+1 }} </i>~
-      <i> {{page*pageSize
-        < total ? page*pageSize :total }} </i>条,总共
-          <i>{{total}}条</i>
-    </p>
-  </div>
-
-
-</div>
+    
+         
+            <div class="table_div" *ngFor="let item of data">
+                <p>{{item.questionContent}}</p> 
+                <div class="inner_table_div">
+                    <p style="height:3px"></p>
+                <table class="table table-condensed ">
+                    <thead>
+                    <th>
+                       选项内容
+                    </th>
+                     <th>
+                       小计
+                    </th>
+                     <th>
+                       比例
+                    </th>
+                    </thead>
+                    <tr *ngFor="let option of item.suboptions">
+                        <td title={{option.optionContent}}>
+                            {{option.optionContent}}
+                        </td>
+                           <td>
+                            {{option.count}}
+                        </td>
+                           <td>
+                            <div class="td_outer_div" >
+                            <div class="td_inner_div" [ngStyle]="convert(option.ratio)"  >
+                            </div>
+                            {{option.ratio}}
+                            </div>
+                            
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+    <div>
+       <div class="pagination">
+                <ul>
+                    <li>
+                        <select [ngModel]="pageSize" (ngModelChange)=" pageSize=$event;changePageSize()">
+                            <option *ngFor="let item of sizeList" >{{item}}</option>  
+                        </select>
+                    </li>
+                    <li><a (click)="topPage()">首页</a></li>
+                    <li *ngIf="page >1"><a (click)="previousPage()">上一页</a></li>
+                    <li *ngIf="page<totalPages"><a (click)="nextPage()">下一页</a></li>
+                    <li><a (click)="endPage()">尾页</a></li>
+                </ul>
+            </div>
+            <div *ngIf=" page>0" class="pagination_right_div">
+                <p><i>{{(page-1)*pageSize+1  }} </i>~<i> {{page*pageSize < total ? page*pageSize :total }} </i>条,总共<i>{{total}}条</i></p>
+            </div>
+        </div>
+    
+    
