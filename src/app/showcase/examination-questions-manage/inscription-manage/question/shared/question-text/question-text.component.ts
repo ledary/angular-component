@@ -13,7 +13,7 @@ const answerSignConst = '|';
   selector: 'question-text',
   templateUrl: 'question-text.component.html',
   styleUrls: ['question-text.component.css'],
-  encapsulation: ViewEncapsulation.None  // 相当于全局的样式
+  // encapsulation: ViewEncapsulation.None  // 相当于全局的样式
 })
 export class QuestionTextComponent extends QuestionComponent implements OnInit {
   // 别名
