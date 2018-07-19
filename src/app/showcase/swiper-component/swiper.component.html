@@ -2,14 +2,11 @@
 <div class="line-wrapper" *ngFor="let data of datas,let i = index" #linewrapper>
   <div class="line-scroll-wrapper" #scorewrapper>
     <div class="line-normal-wrapper" #nomalwrapper>
-      <div class="line-normal-left-wrapper">
         <div class="line-normal-info-wrapper">
           <div class="line-normal-user-name">{{data.name}}</div>
           <div class="line-normal-msg">{{data.anthor}}</div>
           <div class="line-normal-time">{{data.times}}</div>
         </div>
-      </div>
-
     </div>
     <div class="line-btn-delete" (click)="del(i)"><button>删除</button></div>
   </div>

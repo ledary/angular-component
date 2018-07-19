@@ -58,7 +58,7 @@ export class SwiperComponent implements OnInit,AfterViewInit {
 
     }
 ngAfterViewInit(){
-    this.divInitWidth();
+    // this.divInitWidth();
         this.dymdicBind();
     
 }
