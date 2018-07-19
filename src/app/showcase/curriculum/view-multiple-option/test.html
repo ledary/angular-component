@@ -1,18 +1,16 @@
 <div class="top">
 <view-select-top> </view-select-top>
 </div>
-<div class="container">
-    <div class="row">
 
-     <div class="form-group col-sm-8">
-            <div class="input-group">
-                <input type="text" class="form-control"   placeholder="请输入题干名称" [(ngModel)] = "condition">
-                <div class="input-group-addon search_div" >搜索</div>
-                <div class="input-group-addon export_div" >导出</div>
-             
-            </div>
-           
-        </div>
+<div class="form-group col-sm-8">
+    <div class="input-group">
+        <input type="text" class="form-control"   placeholder="请输入题干名称" [(ngModel)] = "condition">
+        <div class="input-group-addon search_div" >搜索</div>
+        <div class="input-group-addon export_div" >导出</div>
+    </div>
+</div>
+
+     
         <div class="table_div" *ngFor="let item of data">
             <p>{{item.questionContent}}</p> 
             <div class="inner_table_div">
@@ -48,7 +46,7 @@
             </table>
             </div>
         </div>
-
+<div>
    <div class="pagination">
             <ul>
                 <li>
@@ -65,9 +63,5 @@
         <div *ngIf=" page>0" class="pagination_right_div">
             <p><i>{{(page-1)*pageSize+1  }} </i>~<i> {{page*pageSize < total ? page*pageSize :total }} </i>条,总共<i>{{total}}条</i></p>
         </div>
-
-
-        <!--row-->
     </div>
-    <!--container-->
-</div>
+
