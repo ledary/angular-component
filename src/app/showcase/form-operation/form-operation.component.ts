@@ -34,7 +34,7 @@ export class FormOperationComponent implements OnInit, AfterViewInit {
         this.user.password = "1";
         this.user.phone = "157326";
         this.user.sexName = "男";
-        this.user.sexCode = "0"
+        this.user.sexCode = "1"
     }
     //复选框渲染界面
     viewInit(){
@@ -72,6 +72,7 @@ export class FormOperationComponent implements OnInit, AfterViewInit {
         let inputs = $(html).find('input');
         let strs = [];
         for (let i = 0; i < inputs.length; i++) {
+            //判断是否为元素节点，以及checked是否唯true
             if (inputs[i].nodeType == 1 && inputs[i].checked == true) {
                 strs.push(inputs[i].parentElement.innerText.trim());
             }

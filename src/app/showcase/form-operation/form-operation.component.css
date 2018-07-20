@@ -38,6 +38,11 @@ div{
 .com-input{
     width:70%;
 }
+.com-radio-label{
+    width:20%;
+    margin-top: 5px;
+}
+
 
 select{
     border:1px solid #ccc;

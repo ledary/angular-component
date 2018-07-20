@@ -22,10 +22,10 @@
                 </div>
                 <div id="radio_div" class="form-group col-sm-6">
                     <label class="com-label">性　别</label>
-                    <label class="com-label">
-                        <input checked class="com-radio" type="radio" name="sex" [(ngModel)]="user.sexCode" value="0" (click)="selectRadio()">男
+                    <label class="com-radio-label">
+                        <input class="com-radio" type="radio" name="sex" [(ngModel)]="user.sexCode" value="0" (click)="selectRadio()">男
                     </label>
-                    <label class="com-label">
+                    <label class="com-radio-label">
                         <input class="com-radio" type="radio" name="sex" [(ngModel)]="user.sexCode" value="1" (click)="selectRadio()">女
                     </label>
                 </div>
@@ -58,7 +58,6 @@
                     <label *ngFor="let like of  likes,let i  = index" class="com-label">
                         <input type="checkbox" class="com-box" (click)="selectLike(checkDiv)"> {{like}}
                     </label>
-
                 </div>
 
 
