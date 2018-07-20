@@ -18,7 +18,7 @@ import {  InterceptComponent} from './intercept-component/intercept.component';
 
 import {SwiperComponent  } from './swiper-component/swiper.component';
 import {LoginTest  } from './logintest/logintest.component';
-import { DropDownComponent } from '.././components/drop-down/drop-down.component';
+import { DropDownModule } from '.././components/drop-down/drop-down.component.module';
 
 import {QuestionTableComponent  } from './question-table/questiontable.component';
 import {DragComponent  } from './drag/drag.component';
@@ -39,7 +39,6 @@ import {  ComponentModule } from '.././components/component/component.module';
 
 @NgModule({
   declarations: [
-    DropDownComponent,
     TestComponent,
     DataTableDemo,
     BackTestComponent,
@@ -60,6 +59,7 @@ import {  ComponentModule } from '.././components/component/component.module';
     HttpModule,
     DataTableModule,
     ComponentModule,
+    DropDownModule,
     RouterModule.forChild(testRoutes)
     
 

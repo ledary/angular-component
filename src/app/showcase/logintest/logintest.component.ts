@@ -60,8 +60,7 @@ export class LoginTest implements OnInit, AfterViewInit {
 
 
 
-  exportExcel(table: HTMLElement) {
-    console.log(table.innerText)
+  exportExcel() {
     //tab是对应界面的表格。
     let tab = this.tplRef.nativeElement;
     // let tab:any= document.getElementById("tableExcel");
