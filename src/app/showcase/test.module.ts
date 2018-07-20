@@ -26,7 +26,7 @@ import { DropDownComponent } from '.././components/drop-down/drop-down.component
 import {QuestionTableComponent  } from './question-table/questiontable.component';
 import {DragComponent  } from './drag/drag.component';
 import {DragDirective  } from './drag-directive/drag.directive';
-
+import {FormOperationComponent} from  './form-operation/form-operation.component'
 
 
 
@@ -49,7 +49,8 @@ import {DragDirective  } from './drag-directive/drag.directive';
     QuestionTableComponent,
     LoginTest,
     DragDirective,
-    DragComponent
+    DragComponent,
+    FormOperationComponent
   ], 
 
   imports: [

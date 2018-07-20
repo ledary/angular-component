@@ -4,7 +4,7 @@ import {  Http } from '@angular/http';
 
 @Component({
   selector: 'view-multiple-option',
-  templateUrl: './test.html',
+  templateUrl: './view-multiple-option.component.html',
   styleUrls: ['../curriculum-view.css']
 })
 export class ViewMultipleOptionComponent implements OnInit {

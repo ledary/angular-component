@@ -6,10 +6,7 @@ import { Router ,ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  // templateUrl: './apptest.html',
   styleUrls: ['./app.component.css'],
-  // styleUrls: ['./test.css'],
-
   animations: [
     trigger('overlayState', [
       state('hidden', style({

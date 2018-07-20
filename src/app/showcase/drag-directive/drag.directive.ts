@@ -76,28 +76,12 @@ export class DragDirective {
             if (!obj.dragModal.mouseDragDown || obj.dragModal.moveTarget == undefined) {
                 return;
             }
-            // if(!obj.isDOMContains(obj.dragModal.moveTarget[0],e.target)){
-            //     obj.onMouseup()
-            //     return;
-            // }g(
-
-            
             var element = document.elementFromPoint(e.clientX, e.clientY);
             let el: HTMLElement = obj.dragModal.moveTarget[0];
          
             console.log("前" + (obj.getAbsLeft(element)));
             console.log("后" + obj.getAbsLeft(el))
-            // if(obj.getAbsLeft(element)+ element.clientWidth>=obj.getAbsLeft(el) ){
-            //     console.log(true);
-            // }else{
-            //     console.log(false);
-            // }
-            // console.log("当前" + obj.getAbsLeft(element));
-            // console.log("目标" + obj.getAbsLeft(el));
-            //     console.log(el.offsetLeft);
-            //     console.log(el.clientLeft);
-            //     console.log(el.style.left);;
-            // console.log(e.target.offsetLeft);
+     
             var mousX = e.clientX;
             var mousY = e.pageY;
             if (mousX < 0) mousX = 0;

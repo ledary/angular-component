@@ -1,0 +1,53 @@
+*{
+    font-size: 20px;
+    font-family: '楷体';
+}
+div{
+    border-top: 0px;
+}
+
+
+.body-div,.modal-content{
+    width:1000px;
+}
+.body-div{
+    height:500px;
+    margin-top: 15px;
+
+}
+.com-label{
+    width:15%;
+    float: left;
+    margin-top: 5px;
+}
+.com-radio,.com-box{
+    float: left;
+    margin-left: 0px;
+    margin-top:-4px;
+    padding: 6px 12px;
+    height:34px;
+}
+.com-input{
+    width:70%;
+}
+
+select{
+    border:1px solid #ccc;
+    width:70%;
+    height:35px;
+}
+
+.result_div{
+    float: left;
+    border: 1px solid #ccc;
+    height: 280px;
+    width:48%;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+
+.span_input{
+    border: 0;
+    width: 140px;
+    
+}
