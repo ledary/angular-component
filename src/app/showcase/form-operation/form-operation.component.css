@@ -7,14 +7,22 @@ div{
 }
 
 
+/* 改动模态框的位置 */
+.com-dialog{
+    margin-top:100px;
+    margin-left:400px;
+}
+
+/* 改动模态框内容的大小 */
 .body-div,.modal-content{
     width:1000px;
 }
 .body-div{
     height:500px;
     margin-top: 15px;
-
 }
+
+/* 改造自己的label */
 .com-label{
     width:15%;
     float: left;
@@ -37,17 +45,24 @@ select{
     height:35px;
 }
 
+/* 结果div的处理 */
 .result_div{
     float: left;
     border: 1px solid #ccc;
-    height: 280px;
-    width:48%;
-    margin-left: 5px;
+    border-radius: 5px;
+    height: 300px;
+    width:45%;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 10px;
     margin-bottom: 15px;
+    text-indent:1em;
 }
 
-.span_input{
-    border: 0;
-    width: 140px;
-    
+/* 遮挡div横线的span */
+.com-span{
+    position:relative;
+    background-color:#FFFFFF;
+    top:-15px;
+    left: 30px;
 }
