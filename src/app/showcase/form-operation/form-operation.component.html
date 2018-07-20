@@ -1,0 +1,95 @@
+<!-- Button trigger modal -->
+
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" style="padding-top:100px;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" itoo-drag>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span style="color:black">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel" class="un">表单添加操作</h4>
+            </div>
+            <div class=" body-div">
+<div id="form_div">
+                <div class="form-group col-sm-6">
+                    <label class="com-label">用户名</label>
+                    <input type="text" class="form-control com-input" placeholder="自定义用户名" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.userName">
+                </div>
+                <div id="radio_div" class="form-group col-sm-6">
+                    <label class="com-label">性　别</label>
+                    <label class="com-label">
+                        <input checked  class="com-radio" type="radio" name="sex" [(ngModel)]="user.sexCode" value="0" (click)="selectRadio()">男
+                    </label>
+                    <label class="com-label">
+                        <input  class="com-radio" type="radio" name="sex" [(ngModel)]="user.sexCode" value="1" (click)="selectRadio()">女
+                    </label>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="com-label">密　码</label>
+                    <input type="text" class="form-control com-input" placeholder="输入密码" [(ngModel)]="user.password">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="com-label">邮　箱</label>
+                    <input type="text" class="form-control com-input" placeholder="输入邮箱地址" [(ngModel)]="user.email">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="com-label">手机号</label>
+                    <input type="text" class="form-control com-input" placeholder="输入手机号" [(ngModel)]="user.phone">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label class="com-label">职　位</label>
+                    <select #select (change)="chageOption(select)" [(ngModel)]="user.job">
+                        <option value="jiaoshi">教师</option>
+                        <option value="zhuren">主任</option>
+                        <option value="jiaoshou">教授</option>
+                        <option value="fujiaoshou">副教授</option>
+                        <option value="jiangshi">讲师</option>
+                        <option value="xiaozhang">校长</option>
+                        <option value="fuxiaozhang">副校长</option>
+                    </select>
+                </div>
+                        
+            </div>
+                <div #checkDiv class="form-group col-sm-8">
+                        <label class="com-label">爱好</label>
+                        <label *ngFor="let like of  likes,let i  = index" class="com-label" >
+                            <input type="checkbox" class="com-box" (click)="selectLike(i)"> {{like}}
+                        </label>
+                       
+                    </div>
+
+
+                    <div class="result_div">
+                        <p>　输出结果：</p>
+                        <span>{{result}}</span>
+                      
+                    </div>
+                    <div class="result_div" >
+                    <p>用户信息</p>
+                            userName:<input class="span_input" readonly [(ngModel)]="user.userName" ><br>
+                            password:<input class="span_input" readonly [(ngModel)]="user.password"><br>
+                            email:<input class="span_input" readonly [(ngModel)]="user.email"><br>
+                            sexCode:<input class="span_input" readonly [(ngModel)]="user.sexCode">
+                            sexName:<input class="span_input" readonly [(ngModel)]="user.sexName"><br>
+                            job:<input class="span_input" readonly [(ngModel)]="user.job">
+                            jobName:<input class="span_input" readonly [(ngModel)]="user.jobName"><br>
+                            phone:<input class="span_input" readonly [(ngModel)]="user.phone"><br>
+                            like:{{user.like}}<br>
+                        </div>
+                        
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="saveForm('form_div')">提交表单</button>
+                <button type="button" class="btn btn-primary" (click)="saveSelect(select)">获取下拉框</button>
+                <button type="button" class="btn btn-primary" (click)="saveRadio()">获取单选框</button>
+                <button type="button" class="btn btn-primary" (click)="saveCheckbox(checkDiv)">获取复选框</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import {SwiperComponent  } from './swiper-component/swiper.component';
 import {LoginTest  } from './logintest/logintest.component';
 import {DragComponent  } from './drag/drag.component';
 import {QuestionTableComponent  } from './question-table/questiontable.component';
+import {FormOperationComponent} from  './form-operation/form-operation.component'
 
 
 
@@ -25,6 +26,7 @@ export const testRoutes = [
     { path: 'login', component:LoginTest },
     { path: 'drag', component:DragComponent },
     { path: 'questiontable', component:QuestionTableComponent },
+    { path: 'formoperation', component:FormOperationComponent },
     {path:'curriculum',loadChildren:"./curriculum/curriculum.module#CurriculumModule"},
     {path:'exammanager',
     loadChildren:"./examination-questions-manage/examination-questions-manage.module#ExaminationQuestionsManageModule"}

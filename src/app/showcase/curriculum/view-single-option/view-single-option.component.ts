@@ -5,8 +5,7 @@ import {  Http } from '@angular/http';
 
 @Component({
   selector: 'view-single-option',
-  // templateUrl: './view-single-option.component.html',
-  templateUrl: './test.html',
+  templateUrl: './view-single-option.component.html',
   styleUrls: ['../curriculum-view.css']
 })
 export class ViewSingleOptionComponent implements OnInit {
