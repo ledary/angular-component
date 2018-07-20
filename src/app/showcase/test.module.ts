@@ -9,15 +9,12 @@ import {Http, HttpModule,XHRBackend, RequestOptions} from '@angular/http';
 import {  DataTableModule} from 'ng-itoo-datatable';
 // import { DataTableModule } from '.././components/datatable/datatable.module';
 // import { CommonsModule } from '.././components/boke-test/module/common.module';
-import {  ComponentModule } from '.././components/component/component.module';
 import { TestComponent} from './test.component';
 import {testRoutes } from './test.routes';
 import {DataTableDemo  } from './datatabledemo/datatabledemo.component';
 import { BackTestComponent }  from './backtest/backtest.component';
 import { ProxyComponent  } from './proxyTest/proxy.component'
 import {  InterceptComponent} from './intercept-component/intercept.component';
-import { HttpInterceptorService }   from './util/interceptservice';
-import {BaseService } from './util/baseservice';
 
 import {SwiperComponent  } from './swiper-component/swiper.component';
 import {LoginTest  } from './logintest/logintest.component';
@@ -28,6 +25,8 @@ import {DragComponent  } from './drag/drag.component';
 import {DragDirective  } from './drag-directive/drag.directive';
 import {FormOperationComponent} from  './form-operation/form-operation.component'
 import {ComponentComponent} from  './components/component'
+
+import {  ComponentModule } from '.././components/component/component.module';
 
 
 

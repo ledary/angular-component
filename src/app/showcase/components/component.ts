@@ -14,8 +14,9 @@ export class ComponentComponent {
         btnName: "判断权限"
     }
 
-    getAuth(str) {
-        if (str) {
+    getAuth(result) {
+
+        if (result.code) {
             alert("有权限")
         } else {
             alert("没有权限")

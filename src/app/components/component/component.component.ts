@@ -21,8 +21,11 @@ export class ComponentComponent implements OnInit {
   ngOnInit() {}
 
   click(){
+    let result = new Result();
     let flag = this.getBackData();
-    this.clickEmit.emit(flag);
+    result.code = flag;
+    result.data = event.srcElement;
+    this.clickEmit.emit(result);
   }
 
   // 模拟后台判断该用户是否有权限
@@ -36,13 +39,15 @@ export class ComponentComponent implements OnInit {
     else{
       return 0;
     }
-
   }
 
 
 
 }
-export class User{
-  userCode:string;
-  password:string;
+export class Result{
+  code:any;
+  data:any
 }
+
+
+
