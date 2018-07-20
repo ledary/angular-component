@@ -59,7 +59,7 @@
                 <div #checkDiv class="form-group col-sm-8">
                         <label class="com-label">爱好</label>
                         <label *ngFor="let like of  likes,let i  = index" class="com-label" >
-                            <input type="checkbox" class="com-box" (click)="selectLike(i)"> {{like}}
+                            <input type="checkbox" class="com-box" (click)="selectLike(checkDiv)"> {{like}}
                         </label>
                        
                     </div>
